@@ -18,6 +18,10 @@ Widget PhoneNumberBox({
     onInputChanged: (PhoneNumber number) {
       print(number.phoneNumber);
     },
+    validator: (value) {
+      // return null;
+      return validator!(value);
+    },
     onInputValidated: (bool value) {
       print(value);
     },
@@ -38,24 +42,33 @@ Widget PhoneNumberBox({
       counter: const SizedBox.shrink(),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: Colors.blue,
+          color: activeColor,
           width: 1,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(12.0),
+          bottomRight: Radius.circular(12.0),
+        ),
       ),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: Colors.grey,
+          color: normalColor,
           width: 1,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(12.0),
+          bottomRight: Radius.circular(12.0),
+        ),
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(
           color: errorColor ?? const Color(0xFFE72C37),
           width: 1,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(12.0),
+          bottomRight: Radius.circular(12.0),
+        ),
       ),
 
       suffixIcon: (icon != null) ? icon : Container(),
@@ -69,7 +82,10 @@ Widget PhoneNumberBox({
           color: Colors.green,
           width: 1,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(12.0),
+          bottomRight: Radius.circular(12.0),
+        ),
       ),
     ),
     onSaved: (PhoneNumber number) {

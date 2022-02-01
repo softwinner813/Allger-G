@@ -1,4 +1,3 @@
-import 'package:allger/Helpers/lang/locale_keys.g.dart';
 import 'package:allger/Models/user_model.dart';
 import 'package:allger/Pages/App/Provider/auth_provider.dart';
 import 'package:allger/Pages/HelpPage/Styles/index.dart';
@@ -7,6 +6,7 @@ import 'package:allger/Repositories/index.dart';
 import 'package:allger/Route/routes.dart';
 import 'package:allger/Widgets/dialog.dart';
 import 'package:allger/Widgets/main_button.dart';
+import 'package:allger/generated/locale_keys.g.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -61,35 +61,11 @@ class _HelpPageState extends State<HelpPage> {
   }
 
   Future<void> onNextPage() async {
-    // ========== Show Progress Dialog ===========
-    Dialogs.showLoadingDialog(context, _keyLoader, "Please wait..");
-    User? user = await FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      // signed in
-      print("Logined!=======================");
-      try {
-        final result = await UserRepository.getUserByID(user.uid);
-
-        if (result != null) {
-          UserModel _userModel = UserModel.fromJson(result);
-          _userModel.getEmergencyNumbers(result);
-          AuthProvider.of(context).setUserModel(_userModel);
-          //------------ Dismiss Porgress Dialog  -------------------
-          Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
-          Navigator.pushReplacementNamed(context, Routes.profile);
-        } else {
-          //------------ Dismiss Porgress Dialog  -------------------
-          Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
-          Navigator.pushReplacementNamed(context, Routes.login);
-        }
-      } catch (e) {
-        //------------ Dismiss Porgress Dialog  -------------------
-        Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
-        Navigator.pushReplacementNamed(context, Routes.login);
-      }
+    bool isLogin = AuthProvider.of(context).isLogin;
+    UserModel userModel = AuthProvider.of(context).userModel;
+    if (isLogin && userModel != null) {
+      Navigator.pushReplacementNamed(context, Routes.profile);
     } else {
-      //------------ Dismiss Porgress Dialog  -------------------
-      Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
       Navigator.pushReplacementNamed(context, Routes.login);
     }
   }
@@ -107,13 +83,28 @@ class _HelpPageState extends State<HelpPage> {
     ));
     var statusHeight = MediaQuery.of(context).viewPadding.top;
     var height = MediaQuery.of(context).size.height - statusHeight;
+
+    List<String> headTitle = [
+      LocaleKeys.helpPage_title1.tr(),
+      LocaleKeys.helpPage_title2.tr(),
+      LocaleKeys.helpPage_title3.tr(),
+    ];
+
+    List<String> subTitle = [
+      LocaleKeys.helpPage_subTitle1.tr(),
+      LocaleKeys.helpPage_subTitle1.tr(),
+      LocaleKeys.helpPage_subTitle1.tr(),
+    ];
+
+    String continueBtn = LocaleKeys.helpPage_continueBtn.tr();
+    String skipBtn = LocaleKeys.helpPage_skipBtn.tr();
     final items = List.generate(
       3,
       (index) => helpItem(
         context: context,
         img: HelpPageStrings.img[index],
-        headTxt: HelpPageStrings.headTitle[index],
-        subTxt: HelpPageStrings.subTitle[index],
+        headTxt: headTitle[index],
+        subTxt: subTitle[index],
       ),
     );
     return Scaffold(
@@ -161,11 +152,11 @@ class _HelpPageState extends State<HelpPage> {
                           // strokeWidth: 5,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 70,
                       ),
                       MainButton(
-                        title: HelpPageStrings.continueBtn,
+                        title: continueBtn,
                         onTap: () => onNext(),
                       ),
                       SizedBox(
@@ -175,10 +166,11 @@ class _HelpPageState extends State<HelpPage> {
                         onTap: () {
                           //------- GO TO NEXT PAGE ----------
                           onNextPage();
-                          // Navigator.pushReplacementNamed(context, Routes.login);
+                          // Navigator.pushNamed(context, Routes.language,
+                          //     arguments: "Language");
                         },
                         child: Text(
-                          HelpPageStrings.skipBtn,
+                          skipBtn,
                           textAlign: TextAlign.center,
                           style: HelpPageStyles.skipBtnTxt,
                         ),

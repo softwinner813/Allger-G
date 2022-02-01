@@ -4,7 +4,8 @@
     "lengthError" : "Make sure {} between {} and {} characters",
     "formatError" : "It must contains only A-Za-z0-9",
     "error" : "Some error occured. Please retry!",
-
+    "confirmPassError" :"Password doesn't match!",
+    "success" : "{} Succesfully!",
     "helpPage" : {
         "title1" : "Choose Ingridients",
         "title2" : "Track Your Allergy",
@@ -40,7 +41,9 @@
         "signinBtn" : "Sign In",
         "signupWith" : "or register with e-mail",
         "alreadyAccount" : "Already have an account? ",
-        "signupBtn" : "Sign Up"
+        "signupBtn" : "Sign Up",
+        "weakPass" : "The password provided is too weak!",
+        "existEmail" : "The account already exists for that email"
     },
 
     "menu" : {
@@ -59,8 +62,9 @@
     },
 
     "personalPage" : {
-        "firsname" : "Your First Name",
-        "lastname" : "Your  Last Name",
+        "title" : "Personal Data",
+        "firsname" : "First Name",
+        "lastname" : "Last Name",
         "phoneNumber" : "Phone Number",
         "ePhoneNumber" : "Emergency Phone Number",
         "addNumber" : "Add another number",
@@ -75,10 +79,12 @@
         "title" : "Profile Photo",
         "source" : "Select photo from your library",
         "or" : "or",
-        "takePhoto" : "Take Photo"
+        "takePhoto" : "Take Photo",
+        "success" : "Uploaded Successfully!"
     },
 
     "informationPage" : {
+        "title" : "Alergy Informations",
         "type" : "Alergy Type",
         "peanut" : "Peanut",
         "soy" : "Soy",
@@ -89,42 +95,64 @@
         "wheat" : "Wheat",
         "milk" : "Milk",
         "eggs" : "Eggs",
-        "sesame" : "Sesame"
+        "sesame" : "Sesame",
+        "height" : "Height",
+        "weight" : "Weight",
+        "epiPen" : "Do you have an Epi Pen?",
+        "addAllergy": "Add Allergy Type"
     },
 
-    "msg": "Hello {} in the {} world ",
-    "msg_named": "{} are written in the {lang} language",
-    "clickMe": "Click me",
-    "profile": {
-        "reset_password": {
-            "label": "Reset Password",
-            "username": "Username",
-            "password": "password"
-        }
+    "settingPage" : {
+        "title" : "Settings",
+        "loginInfo" : "Login Information",
+        "language" : "Language",
+        "notification" : "Notification",
+        "location" : "Location",
+        "help" : "Help"
     },
-    "clicked": {
-        "zero": "You clicked {} times!",
-        "one": "You clicked {} time!",
-        "two": "You clicked {} times!",
-        "few": "You clicked {} times!",
-        "many": "You clicked {} times!",
-        "other": "You clicked {} times!"
+
+    "loginInfoPage" : {
+        "title" : "Login Information",
+        "username" : "Username",
+        "email" : "E-mail",
+        "password" : "Password",
+        "rpassword" : "Repeat Password",
+        "changePass" : "Change Password",
+        "incorrectEmail" : "Please enter correct email!",
+        "currentPass" : "Current Paasword"
     },
-    "amount": {
-        "zero": "Your amount : {} ",
-        "one": "Your amount : {} ",
-        "two": "Your amount : {} ",
-        "few": "Your amount : {} ",
-        "many": "Your amount : {} ",
-        "other": "Your amount : {} "
+
+    "languagePage" : {
+        "title" : "Language ",
+        "english" : "English",
+        "hebrew" : "Hebrew",
+        "french" : "French",
+        "german" : "German",
+        "chinese" : "Chinese",
+        "Japanese" : "Japanese",
+        "Norway" : "Norway",
+        "Italy" : "Italy",
+        "selectedLang" : "Selected Language",
+        "selectLang" : "Select Language"
+
     },
-    "gender": {
-        "male": "Hi man ;) ",
-        "female": "Hello girl :)",
-        "with_arg": {
-            "male": "Hi man ;) {}",
-            "female": "Hello girl :) {}"
-        }
+
+    "locationPage" : {
+        "title" : "Location",
+        "allowLocation" : "Allow Access to Location",
+        "myLocation" : "Your Location"
     },
-    "reset_locale": "Reset Language"
+   
+    "notificationPage" : {
+        "title" : "Notification",
+        "allowNotification" : "Push Notification"
+    },
+
+    "contactsPage" : {
+        "title" : "Contact List",
+        "maxerror": "You can't add contact number more than {}",
+        "nonumber" : "No available phone number"
+    }
+
+   
 }

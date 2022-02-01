@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 Widget InputBox({
   required TextEditingController controller,
@@ -12,10 +13,12 @@ Widget InputBox({
   TextStyle? hintStyle,
   int? maxLength,
   Color? fillColor,
+  // TextDirection? textDirection,
 }) {
   return TextFormField(
     controller: controller,
     // focusNode: ,
+    // textDirection: t,
     style: textStyle,
     // onChanged: (text) {
     //   controller.text = text;

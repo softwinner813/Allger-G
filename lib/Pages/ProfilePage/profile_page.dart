@@ -10,9 +10,15 @@ import 'package:allger/Route/routes.dart';
 import 'package:allger/Widgets/FloatingButton.dart';
 import 'package:allger/Widgets/TouchEffect.dart';
 import 'package:allger/Widgets/index.dart';
+import 'package:allger/generated/locale_keys.g.dart';
+import 'package:easy_localization/src/public_ext.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:touch_ripple_effect/touch_ripple_effect.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -23,6 +29,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController usernameCtl = new TextEditingController();
   TextEditingController passwordCtl = new TextEditingController();
+  final GlobalKey<State> _keyLoader = new GlobalKey<State>();
 
   @override
   void initState() {
@@ -54,8 +61,36 @@ class _ProfilePageState extends State<ProfilePage> {
     // FocusScope.of(context).requestFocus(new FocusNode());
   }
 
+  Future<void> signOut() async {
+    try {
+      if (GoogleSignIn().currentUser != null) {
+        await GoogleSignIn().signOut();
+      }
+      if (FirebaseAuth.instance.currentUser != null) {
+        await FirebaseAuth.instance.signOut();
+      }
+
+      Navigator.pushReplacementNamed(context, Routes.login);
+    } catch (e) {
+      //---- Show Error Msg
+      showTopSnackBar(
+        context,
+        CustomSnackBar.error(
+          message: LocaleKeys.error.tr(),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    // Strings
+    String title = LocaleKeys.profilePage_title.tr();
+    String personal = LocaleKeys.profilePage_personal.tr();
+    String allergy = LocaleKeys.profilePage_allergy.tr();
+    String setting = LocaleKeys.profilePage_setting.tr();
+    String logout = LocaleKeys.profilePage_logout.tr();
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: AppColors.statusbarColor,
       //color set to transperent or set your own color
@@ -71,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         backgroundColor: AppColors.appBarColor,
         title: Text(
-          ProfilePageStrings.title,
+          title,
           style: ProfilePageStyles.title,
         ),
         actions: [
@@ -102,10 +137,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             Navigator.pushNamed(
                               context,
                               Routes.personalData,
-                              arguments: ProfilePageStrings.personal,
+                              arguments: personal,
                             );
                           },
-                          title: ProfilePageStrings.personal,
+                          title: personal,
                           icon: AllerG.user,
                           suffIcon: true),
                       ProfileListItem(
@@ -113,25 +148,29 @@ class _ProfilePageState extends State<ProfilePage> {
                             Navigator.pushNamed(
                               context,
                               Routes.information,
-                              arguments: ProfilePageStrings.allergy,
+                              arguments: allergy,
                             );
                           },
-                          title: ProfilePageStrings.allergy,
+                          title: allergy,
                           icon: Icons.info,
                           suffIcon: true),
                       ProfileListItem(
                           onTap: () {
-                            print("FSDFSD");
+                            Navigator.pushNamed(
+                              context,
+                              Routes.settings,
+                              arguments: setting,
+                            );
                           },
-                          title: ProfilePageStrings.setting,
+                          title: setting,
                           icon: Icons.settings,
                           suffIcon: true),
                       Divider(),
                       ProfileListItem(
-                          onTap: () {
-                            print("FSDFSD");
+                          onTap: () async {
+                            await signOut();
                           },
-                          title: ProfilePageStrings.logout,
+                          title: logout,
                           icon: FontAwesomeIcons.signOutAlt,
                           suffIcon: false),
                     ],

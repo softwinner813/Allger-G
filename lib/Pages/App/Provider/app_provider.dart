@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:allger/Helpers/constant.dart';
+import 'package:allger/Pages/App/Styles/index.dart';
+import 'package:allger/Pages/LanguagePage/languageItem.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 // import 'package:within/Models/index.dart';
@@ -7,6 +10,22 @@ import 'package:provider/provider.dart';
 class AppProvider extends ChangeNotifier {
   static AppProvider of(BuildContext context, {bool listen = false}) =>
       Provider.of<AppProvider>(context, listen: listen);
+
+  //  Language
+  List<LangItem> _selectLangList = [];
+  List<LangItem> get selectLangList => _selectLangList;
+  void setSelectLangList(List<LangItem> selectLangList,
+      {bool isNotifiable = true}) async {
+    _selectLangList = selectLangList;
+    if (isNotifiable) notifyListeners();
+  }
+
+  LangItem? _currentLang;
+  LangItem get currentLang => _currentLang!;
+  void setCurrentLang(LangItem lang) {
+    _currentLang = lang;
+    notifyListeners();
+  }
 
   // // ------ CURRENT DATE ------
   // DateTime _currentDate = DateTime.now();

@@ -1,11 +1,13 @@
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:allger/Helpers/lang/locale_keys.g.dart';
-import 'package:allger/Pages/App/Styles/colors.dart';
+import 'package:allger/Models/index.dart';
+import 'package:allger/Pages/App/Provider/auth_provider.dart';
+import 'package:allger/Repositories/index.dart';
 import 'package:allger/Route/routes.dart';
+import 'package:allger/generated/locale_keys.g.dart';
 import 'package:easy_localization/src/public_ext.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,18 +20,56 @@ class _SplashState extends State<Splash> {
   // SplashColors pageColors = new SplashColors();
   // SplashStrings pageStrings = new SplashStrings();
   // SplashStyles pageStyles = new SplashStyles();
-  late Timer _timer;
+  // late Timer _timer;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-    _timer = Timer(const Duration(milliseconds: 2000), () {
-      // setState(() {});
-      // print("SDFDFDS");
+    // _timer = Timer(const Duration(milliseconds: 2000), () {
+    //   // setState(() {});
+    //   // print("SDFDFDS");
 
-      Navigator.pushReplacementNamed(context, Routes.help);
-    });
+    //   Navigator.pushReplacementNamed(context, Routes.help);
+    // });
+    // _initializeFirebase();
+    getInitData();
+  }
+
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
+  Future<void> getInitData() async {
+    await _initializeFirebase();
+    User? user = await FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      // signed in
+      print("Logined!=======================");
+
+      try {
+        final result = await UserRepository.getUserByID(user.uid);
+
+        if (result != null) {
+          UserModel _userModel = UserModel.fromJson(result);
+          _userModel.getContactNumbers(result);
+          _userModel.getAllergyTypes(result);
+          AuthProvider.of(context).setUserModel(_userModel);
+          AuthProvider.of(context).setIsLogin(true);
+        } else {
+          AuthProvider.of(context).setIsLogin(false);
+        }
+      } catch (e) {
+        AuthProvider.of(context).setIsLogin(false);
+      }
+    } else {
+      print("LogOuted!=======================");
+
+      AuthProvider.of(context).setIsLogin(false);
+    }
+
+    Navigator.pushReplacementNamed(context, Routes.help);
   }
 
   @override
@@ -37,7 +77,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement dispose
     super.dispose();
 
-    _timer.cancel();
+    // _timer.cancel();
   }
 
   @override

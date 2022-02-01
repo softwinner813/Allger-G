@@ -15,6 +15,8 @@ import 'package:allger/Route/routes.dart';
 import 'package:allger/Widgets/FloatingButton.dart';
 import 'package:allger/Widgets/TouchEffect.dart';
 import 'package:allger/Widgets/index.dart';
+import 'package:allger/generated/locale_keys.g.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -83,13 +85,12 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
           // setState(() {});
           userModel.avatar = '$value';
           AuthProvider.of(context).setUserModel(userModel);
-
           await UserRepository.updateUser(userModel);
           //---- Show Error Msg
           showTopSnackBar(
             context,
             CustomSnackBar.success(
-              message: UploadPhotoPageStrings.success,
+              message: LocaleKeys.uploadPhotoPage_success,
             ),
           );
         },
@@ -100,7 +101,7 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
       showTopSnackBar(
         context,
         CustomSnackBar.error(
-          message: UploadPhotoPageStrings.error,
+          message: LocaleKeys.error,
         ),
       );
     }
@@ -123,6 +124,14 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
 
   @override
   Widget build(BuildContext context) {
+    // String
+    String title = LocaleKeys.uploadPhotoPage_title.tr();
+    String source = LocaleKeys.uploadPhotoPage_source.tr();
+    String or = LocaleKeys.uploadPhotoPage_or.tr();
+    String takePhoto = LocaleKeys.uploadPhotoPage_takePhoto.tr();
+    // String success = LocaleKeys.uploadPhotoPage_.tr();
+    String error = LocaleKeys.error.tr();
+    //-----------------------------------------------------------
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: AppColors.statusbarColor,
       //color set to transperent or set your own color
@@ -141,7 +150,7 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
       appBar: AppBar(
         backgroundColor: AppColors.appBarColor,
         title: Text(
-          UploadPhotoPageStrings.title,
+          title,
           style: UploadPhotoPageStyles.title,
         ),
       ),
@@ -215,13 +224,13 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
                   margin: EdgeInsets.only(bottom: 20),
                   width: 160,
                   child: Text(
-                    UploadPhotoPageStrings.source,
+                    source,
                     textAlign: TextAlign.center,
                     style: UploadPhotoPageStyles.subText,
                   ),
                 ),
                 Text(
-                  UploadPhotoPageStrings.or,
+                  or,
                   style: UploadPhotoPageStyles.orText,
                 ),
                 Padding(
@@ -241,7 +250,7 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
                         ),
                       ),
                       child: Text(
-                        UploadPhotoPageStrings.takePhoto,
+                        takePhoto,
                         style: UploadPhotoPageStyles.takePhotoTxt,
                       ),
                     ),
@@ -251,7 +260,7 @@ class _UploadPhotoPageState extends State<UploadPhotoPage> {
                   height: 40,
                 ),
                 MainButton(
-                    title: PersonalPageStrings.updateBtn,
+                    title: LocaleKeys.personalPage_updateBtn.tr(),
                     onTap: () async {
                       await uploadImageToFirebase(context);
                     })

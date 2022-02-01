@@ -1,27 +1,22 @@
-import 'dart:convert';
-
-import 'package:allger/Helpers/aller_g_icons.dart';
 import 'package:allger/Helpers/index.dart';
-import 'package:allger/Models/emergeny_number_model.dart';
+import 'package:allger/Models/contact_model.dart';
 import 'package:allger/Models/user_model.dart';
 import 'package:allger/Pages/App/Provider/auth_provider.dart';
-import 'package:allger/Pages/App/Styles/colors.dart';
 import 'package:allger/Pages/App/Styles/index.dart';
 import 'package:allger/Pages/LoginPage/Styles/index.dart';
 import 'package:allger/Pages/LoginPage/login_item.dart';
 import 'package:allger/Repositories/user_repository.dart';
 import 'package:allger/Route/routes.dart';
 import 'package:allger/Widgets/TouchEffect.dart';
-import 'package:allger/Widgets/dialog.dart';
 import 'package:allger/Widgets/index.dart';
+import 'package:allger/generated/locale_keys.g.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
-import 'package:touch_ripple_effect/touch_ripple_effect.dart';
 import 'package:email_validator/email_validator.dart';
 
 class LoginPage extends StatefulWidget {
@@ -76,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
         showTopSnackBar(
           context,
           CustomSnackBar.error(
-            message: LoginPageStrings.wrongpass,
+            message: LocaleKeys.loginPage_wrongpass.tr(),
           ),
         );
       }
@@ -108,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
         showTopSnackBar(
           context,
           CustomSnackBar.error(
-            message: LoginPageStrings.wrongUsername,
+            message: LocaleKeys.loginPage_wrongUsername.tr(),
           ),
         );
         break;
@@ -118,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
         showTopSnackBar(
           context,
           CustomSnackBar.error(
-            message: LoginPageStrings.wrongpass,
+            message: LocaleKeys.loginPage_wrongpass.tr(),
           ),
         );
         break;
@@ -127,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
         showTopSnackBar(
           context,
           CustomSnackBar.error(
-            message: AppStrings.error,
+            message: LocaleKeys.error,
           ),
         );
     }
@@ -142,13 +137,26 @@ class _LoginPageState extends State<LoginPage> {
       Dialogs.showLoadingDialog(context, _keyLoader, "Please wait..");
       try {
         await getUser(user!);
-      } catch (e) {}
+      } catch (e) {
+        showTopSnackBar(
+          context,
+          CustomSnackBar.error(
+            message: e.toString(),
+          ),
+        );
+      }
 
       //------------ Dismiss Porgress Dialog  -------------------
       Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
       await toDoResult(1);
     } catch (e) {
       print(e);
+      showTopSnackBar(
+        context,
+        CustomSnackBar.error(
+          message: e.toString(),
+        ),
+      );
     }
 
     // return user;
@@ -160,22 +168,18 @@ class _LoginPageState extends State<LoginPage> {
 
     if (result != null) {
       UserModel _userModel = UserModel.fromJson(result);
-      _userModel.getEmergencyNumbers(result);
+      _userModel.getContactNumbers(result);
+      _userModel.getAllergyTypes(result);
       AuthProvider.of(context).setUserModel(_userModel);
     } else {
-      EmergencyNumberModel emodel = EmergencyNumberModel(
-        uid: user.uid,
-        contactName: "",
-        phoneNumber: "",
-      );
-
       UserModel _userModel = UserModel(
-        uid: (user.uid != null) ? user.uid : "",
-        email: (user.email != null) ? user.email! : "",
-        fullname: (user.displayName != null) ? user.displayName! : "",
-        avatar: (user.photoURL != null) ? user.photoURL! : "",
-        phoneNumber: (user.phoneNumber != null) ? user.phoneNumber! : "",
-        emergencyNumbers: [emodel],
+        uid: user.uid,
+        email: user.email ?? "",
+        fullname: user.displayName ?? "",
+        avatar: user.photoURL ?? "",
+        phoneNumber: user.phoneNumber ?? "",
+        contacts: [],
+        allergyTypes: [],
         joined: (user.metadata.creationTime != null)
             ? user.metadata.creationTime!.millisecondsSinceEpoch
             : 0,
@@ -221,6 +225,31 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Strings
+    String title = LocaleKeys.loginPage_title.tr();
+    String loginBtn = LocaleKeys.loginPage_signinBtn.tr();
+    String forgotpass = LocaleKeys.loginPage_forgot.tr();
+    String signupBtn = LocaleKeys.loginPage_signupBtn.tr();
+    String hintUsername = LocaleKeys.loginPage_username.tr();
+    String hintPassword = LocaleKeys.loginPage_password.tr();
+    String loginWith = LocaleKeys.loginPage_loginWith.tr();
+    String dontAccount = LocaleKeys.loginPage_dontaccount.tr();
+
+    String validEmail = LocaleKeys.validEmail.tr();
+    String emailLengthError =
+        LocaleKeys.lengthError.tr(args: ['email', '6', '50']);
+
+    String passLengthError = LocaleKeys.lengthError.tr(args: [
+      'password',
+      '8',
+      '20',
+    ]);
+
+    String formatError = LocaleKeys.formatError.tr();
+
+    String wrongUsername = LocaleKeys.loginPage_wrongUsername.tr();
+    String wrongpass = LocaleKeys.loginPage_wrongpass.tr();
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: AppColors.statusbarColor,
       //color set to transperent or set your own color
@@ -231,7 +260,7 @@ class _LoginPageState extends State<LoginPage> {
     var appBar = AppBar(
       backgroundColor: AppColors.appBarColor,
       title: Text(
-        LoginPageStrings.title,
+        title,
         style: LoginPageStyles.title,
       ),
     );
@@ -273,7 +302,7 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          LoginPageStrings.title,
+                          title,
                           textAlign: TextAlign.start,
                           style: LoginPageStyles.title1,
                         ),
@@ -284,7 +313,7 @@ class _LoginPageState extends State<LoginPage> {
                         // Username
                         InputBox(
                           controller: usernameCtl,
-                          hint: LoginPageStrings.hintUsername,
+                          hint: hintUsername,
                           icon: Icon(
                             AllerG.user,
                             size: 18,
@@ -298,9 +327,9 @@ class _LoginPageState extends State<LoginPage> {
                           validator: (value) {
                             return EmailValidator.validate(value)
                                 ? (value.length < 6 || value.length > 50)
-                                    ? LoginPageStrings.emailLengthError
+                                    ? emailLengthError
                                     : null
-                                : LoginPageStrings.validEmail;
+                                : validEmail;
                           },
                         ),
                         const SizedBox(height: 25),
@@ -308,16 +337,21 @@ class _LoginPageState extends State<LoginPage> {
                         // Password
                         PasswordBox(
                           controller: passwordCtl,
-                          hint: LoginPageStrings.hintPassword,
+                          hint: hintPassword,
                           iconColor: LoginPageColors.greyColor,
                           activeColor: LoginPageColors.activeColor,
                           normalColor: LoginPageColors.greyColor,
                           hintStyle: LoginPageStyles.hint,
                           textStyle: LoginPageStyles.inputTxt,
-                          maxLength: 50,
+                          maxLength: 20,
                           validator: (value) {
+                            final reg = RegExp(r'^[a-zA-Z0-9]+$');
                             if (value.length < 8 || value.length > 20) {
-                              return LoginPageStrings.passLengthError;
+                              return passLengthError;
+                            } else if (!reg.hasMatch(value)) {
+                              return formatError;
+                            } else {
+                              return null;
                             }
                           },
                         ),
@@ -325,7 +359,7 @@ class _LoginPageState extends State<LoginPage> {
 
                         // Login Button
                         MainButton(
-                            title: LoginPageStrings.loginBtn,
+                            title: loginBtn,
                             onTap: () async {
                               if (_formKey.currentState!.validate()) {
                                 // _login(context);
@@ -345,7 +379,7 @@ class _LoginPageState extends State<LoginPage> {
                         TouchEffect(
                           onTap: () {},
                           child: Text(
-                            LoginPageStrings.forgotpass,
+                            forgotpass,
                             style: LoginPageStyles.forgotBtnTxt,
                           ),
                         ),
@@ -356,7 +390,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: double.infinity,
                           margin: const EdgeInsets.only(bottom: 20),
                           child: Text(
-                            LoginPageStrings.loginWith,
+                            loginWith,
                             textAlign: TextAlign.center,
                             style: LoginPageStyles.loginWith,
                           ),
@@ -407,12 +441,12 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              LoginPageStrings.dontAccount,
+                              dontAccount,
                               style: LoginPageStyles.dontAccount,
                             ),
                             TouchEffect(
                               child: Text(
-                                LoginPageStrings.signupBtn,
+                                signupBtn,
                                 style: LoginPageStyles.signupBtnTxt,
                               ),
                               onTap: () {

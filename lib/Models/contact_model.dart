@@ -1,19 +1,19 @@
 import 'dart:convert';
 
-class EmergencyNumberModel {
+class ContactModel {
   String uid;
   String contactName;
   String phoneNumber;
   // int ts;
 
-  EmergencyNumberModel({
+  ContactModel({
     this.uid = "",
     this.contactName = "",
     this.phoneNumber = "",
     // this.ts = 0,
   });
 
-  EmergencyNumberModel.fromJson(Map<String, dynamic> json)
+  ContactModel.fromJson(Map<String, dynamic> json)
       : uid = (json['uid'] != null) ? json['uid'] : "",
         contactName = (json['contactName'] != null) ? json['contactName'] : "",
         phoneNumber = (json['phoneNumber'] != null) ? json['phoneNumber'] : "";

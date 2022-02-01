@@ -2,6 +2,8 @@ import 'package:allger/Helpers/aller_g_icons.dart';
 import 'package:allger/Models/user_model.dart';
 import 'package:allger/Pages/App/Provider/auth_provider.dart';
 import 'package:allger/Pages/App/Styles/index.dart';
+import 'package:allger/generated/locale_keys.g.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 Widget myDrawer(BuildContext context) {
@@ -10,6 +12,15 @@ Widget myDrawer(BuildContext context) {
       ? NetworkImage(_userModel.avatar)
       : AssetImage(AppStrings.defaultAvatar);
   // String username = AuthProvder
+
+  /***************************************************
+   * String
+   */
+  String menuHomepage = LocaleKeys.menu_homepage.tr();
+  String menuProfile = LocaleKeys.menu_profile.tr();
+  String menuEpiPen = LocaleKeys.menu_EpiPen.tr();
+  String menuGame = LocaleKeys.menu_game.tr();
+
   return Drawer(
     child: ListView(
       // Important: Remove any padding from the ListView.
@@ -48,7 +59,7 @@ Widget myDrawer(BuildContext context) {
         ),
         ListTile(
           title: Text(
-            AppStrings.menuHomepage,
+            menuHomepage,
             style: AppStyles.menuTitle,
           ),
           leading: Icon(
@@ -63,7 +74,7 @@ Widget myDrawer(BuildContext context) {
         ),
         ListTile(
           title: Text(
-            AppStrings.menuProfile,
+            menuProfile,
             style: AppStyles.menuTitle,
           ),
           leading: Icon(
@@ -78,7 +89,7 @@ Widget myDrawer(BuildContext context) {
         ),
         ListTile(
           title: Text(
-            AppStrings.menuEpiPen,
+            menuEpiPen,
             style: AppStyles.menuTitle,
           ),
           leading: Icon(
@@ -93,7 +104,7 @@ Widget myDrawer(BuildContext context) {
         ),
         ListTile(
           title: Text(
-            AppStrings.menuGame,
+            menuGame,
             style: AppStyles.menuTitle,
           ),
           leading: Icon(

@@ -1,49 +1,79 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:allger/Models/index.dart';
 import 'package:allger/Pages/HelpPage/Styles/index.dart';
 import 'package:allger/Pages/InformationPage/Styles/index.dart';
 import 'package:allger/Pages/InformationPage/informationPage.dart';
 import 'package:allger/Route/routes.dart';
+import 'package:allger/Widgets/TouchEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AllergyItem extends StatefulWidget {
   Function onTap;
-  String title;
+  AllergyTypeModel allergy;
   Image? icon;
+  bool? active;
 
-  AllergyItem({Key? key, required this.onTap, required this.title, this.icon})
-      : super(key: key);
+  AllergyItem({
+    Key? key,
+    required this.onTap,
+    required this.allergy,
+    this.active,
+  }) : super(key: key);
 
   @override
   _AllergyItemState createState() => _AllergyItemState();
 }
 
 class _AllergyItemState extends State<AllergyItem> {
+  bool isActive = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    isActive = widget.active ?? false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 46,
-      // width: 100,
-      padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          width: 1,
-          color: InformationPageColors.mainColor,
-        ),
-      ),
-      child: Row(
-        children: <Widget>[
-          widget.icon!,
-          SizedBox(
-            width: 10,
+    return TouchEffect(
+      onTap: () {
+        setState(() {
+          isActive = !isActive;
+        });
+        widget.onTap(isActive, widget.allergy);
+      },
+      child: Container(
+        height: 46,
+        // width: 100,
+        margin: EdgeInsets.only(right: 10),
+        padding: EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color:
+              isActive ? InformationPageColors.fillColor : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            width: 1,
+            color: InformationPageColors.mainColor,
           ),
-          Text(
-            widget.title,
-          )
-        ],
+        ),
+        child: Row(
+          children: <Widget>[
+            Image(
+              image: AssetImage(
+                widget.allergy.icon,
+              ),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              widget.allergy.name,
+            )
+          ],
+        ),
       ),
     );
   }

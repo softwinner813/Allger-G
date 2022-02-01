@@ -36,9 +36,9 @@ class App extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        title: 'WithIn',
+        title: 'Allergy-G',
         theme: ThemeData(
-          fontFamily: 'ProductSans',
+          fontFamily: 'SFPro',
           primaryColor: Color(0xfffcc18e),
           floatingActionButtonTheme: FloatingActionButtonThemeData(
               elevation: 0, foregroundColor: Colors.white),
@@ -99,7 +99,10 @@ class App extends StatelessWidget {
                 height: 1.2),
           ),
         ),
-        home: Splash(),
+        home: Directionality(
+          // add this
+          textDirection: TextDirection.rtl, child: Splash(),
+        ),
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );

@@ -10,6 +10,14 @@ class AuthProvider extends ChangeNotifier {
   static AuthProvider of(BuildContext context, {bool listen = false}) =>
       Provider.of<AuthProvider>(context, listen: listen);
 
+  // Login Status
+  bool _isLogin = false;
+  bool get isLogin => _isLogin;
+  void setIsLogin(bool login) {
+    _isLogin = login;
+    notifyListeners();
+  }
+
   /// user info - login info
 
   UserModel _userModel = UserModel();

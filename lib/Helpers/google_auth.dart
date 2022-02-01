@@ -32,7 +32,7 @@ class GoogleAuth {
       final GoogleSignIn googleSignIn = GoogleSignIn();
 
       final GoogleSignInAccount? googleSignInAccount =
-          await googleSignIn.signIn();
+          await GoogleSignIn(scopes: ['profile', 'email']).signIn();
 
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =

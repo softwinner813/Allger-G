@@ -1,0 +1,158 @@
+{
+    "welcome": "欢迎您!",
+    "validEmail" : "請輸入有效電子郵件",
+    "lengthError" : "確保 {} 在 {} 和 {} 字符之間",
+    "formatError" : "它必須只包含 A-Za-z0-9",
+    "error" : "發生了一些錯誤. 請重試！",
+    "confirmPassError" :"密碼不匹配！",
+    "success" : "{} 成功地！",
+    "helpPage" : {
+        "title1" : "选择要素",
+        "title2" : "追踪你的过敏反应",
+        "title3" :"取得联系",
+        "subTitle1" : "取得联系取得联系取得联系取得联系取得联系取得联系取得联系",
+        "subTitle2" : "取得联系取得联系取得联系取得联系取得联系取得联系取得联系",
+        "subTitle3" : "取得联系取得联系取得联系取得联系取得联系取得联系取得联系",
+        "continueBtn" : "继续",
+        "skipBtn" : "跳过"
+    },
+
+    "loginPage" : {
+        "title" : "登录",
+        "username" : "用户名",
+        "password" : "密码",
+        "signinBtn" : "注册",
+        "forgot" : "忘记密码？",
+        "loginWith" : "用…登录",
+        "dontaccount" : "没有账户？ ",
+        "signupBtn" : "注册",
+        "wrongUsername" : "錯誤的用戶名！",
+        "wrongpass" : "密碼錯誤！"
+        
+    },
+
+    
+    "signupPage" : {
+        "title" : "注册",
+        "email" : "E-mail",
+        "username" : "用户名",
+        "password" : "密码",
+        "RPassword" : "重复密码",
+        "signinBtn" : "注册",
+        "signupWith" : "用邮箱注册",
+        "alreadyAccount" : "已有账号？ ",
+        "signupBtn" : "注册",
+        "weakPass" : "提供的密碼太弱了！",
+        "existEmail" : "該電子郵件的帳戶已存在"
+    },
+
+    "menu" : {
+        "homepage" : "主頁",
+        "profile" : "輪廓",
+        "EpiPen" : "尋找 Epi Pen",
+        "game" : "遊戲"
+    },
+
+    "profilePage" : {
+        "title" : "概述",
+        "personal" : "个人信息",
+        "allergy" : "过敏信息",
+        "setting" : "设置",
+        "logout" : "注销"
+    },
+
+    "personalPage" : {
+        "title" : "个人信息",
+        "firsname" : "名",
+        "lastname" : "姓",
+        "phoneNumber" : "电话号码",
+        "ePhoneNumber" : "紧急电话号码",
+        "addNumber" : "紧急联系号码",
+        "contactName" : "紧急联系号码",
+        "gender" : "性别",
+        "birth" : "生日",
+        "age" : "年龄",
+        "address" : "地址",
+        "updateBtn" : "更新"
+    },
+    "uploadPhotoPage" : {
+        "title" : "頭像照片",
+        "source" : "從您的照片庫中選擇照片",
+        "or" : "或者",
+        "takePhoto" : "拍照",
+        "success" : "上傳成功！"
+    },
+
+    "informationPage" : {
+        "title" : "过敏信息",
+        "type" : "过敏种类",
+        "peanut" : "花生",
+        "soy" : "大豆",
+        "nuts" : "坚果",
+        "legumes" : "蔬菜",
+        "fruit" : "水果",
+        "fish" : "鱼类",
+        "wheat" : "小麦",
+        "milk" : "牛奶",
+        "eggs" : "鸡蛋",
+        "sesame" : "芝麻",
+        "height" : "身高",
+        "weight" : "体重",
+        "epiPen" : "你有一支肾上腺素注射器吗?",
+        "addAllergy": "添加過敏類型"
+    },
+
+    "settingPage" : {
+        "title" : "设置",
+        "loginInfo" : "注册信息",
+        "language" : "注册信息",
+        "notification" : "通知",
+        "location" : "地點",
+        "help" : "帮助"
+    },
+
+    "loginInfoPage" : {
+        "title" : "注册信息",
+        "username" : "用户名",
+        "email" : "邮箱",
+        "password" : "密码",
+        "rpassword" : "重复密码",
+        "changePass" : "更换密码",
+        "incorrectEmail" : "請輸入正確的郵箱！",
+        "currentPass" : "當前密碼"
+    },
+
+    "languagePage" : {
+        "title" : "语言 ",
+        "english" : "英语",
+        "hebrew" : "希伯来语",
+        "french" : "法语",
+        "german" : "德语",
+        "chinese" : "中文",
+        "Japanese" : "日语",
+        "Norway" : "挪威",
+        "Italy" : "意大利",
+        "selectedLang" : "選擇的語言",
+        "selectLang" : "選擇語言"
+
+    },
+
+    "locationPage" : {
+        "title" : "地址",
+        "allowLocation" : "允许访问地址",
+        "myLocation" : "您的地址"
+    },
+   
+    "notificationPage" : {
+        "title" : "通知",
+        "allowNotification" : "推送通知"
+    },
+
+    "contactsPage" : {
+        "title" : "聯繫人列表",
+        "maxerror": "您添加的聯繫人號碼不能超過 {}",
+        "nonumber" : "沒有可用的電話號碼"
+    }
+
+   
+}

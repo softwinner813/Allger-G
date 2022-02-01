@@ -19,7 +19,7 @@ class PersonalPageStyles {
   static TextStyle inputText = TextStyle(
     fontSize: 17,
     color: PersonalPageColors.textColor,
-    fontWeight: FontWeight.bold,
+    // fontWeight: FontWeight.bold,
     fontFamily: "SFPro",
   );
 }

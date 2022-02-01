@@ -1,48 +1,158 @@
 {
-    "welcome": "welkom!",
+    "welcome": "Willkommen!",
+    "validEmail" : "Bitte geben Sie eine gültige Email-Adresse ein",
+    "lengthError" : "Stellen Sie sicher, dass {} zwischen {} und {} Zeichen steht",
+    "formatError" : "Es darf nur A-Za-z0-9 enthalten",
+    "error" : "Ein Fehler ist aufgetreten. Bitte erneut versuchen!",
+    "confirmPassError" :"Passwort stimmt nicht überein!",
+    "success" : "{} Erfolgreich!",
     "helpPage" : {
-        "title1" : "Kies ingrediënten",
-        "title2" : "Houd uw allergie bij",
-        "title3" :"Neem contact op",
-        "subTitle1" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "subTitle2" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "subTitle3" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "continueBtn" : "Continue",
-        "skipBtn" : "Skip"
+        "title1" : "Ingridients auswählen",
+        "title2" : "Verfolgen Sie Ihre Allergie",
+        "title3" :"Kontakt aufnehmen",
+        "subTitle1" : "Kontakt aufnehmenKontakt aufnehmenKontakt aufnehmenKontakt aufnehmen",
+        "subTitle2" : "Kontakt aufnehmenKontakt aufnehmenKontakt aufnehmenKontakt aufnehmen",
+        "subTitle3" : "Kontakt aufnehmenKontakt aufnehmenKontakt aufnehmenKontakt aufnehmen",
+        "continueBtn" : "Fortsetzen",
+        "skipBtn" : "Überspringen"
     },
-    "msg": "Hello {} in the {} world ",
-    "msg_named": "{} are written in the {lang} language",
-    "clickMe": "Click me",
-    "profile": {
-        "reset_password": {
-            "label": "Reset Password",
-            "username": "Username",
-            "password": "password"
-        }
+
+    "loginPage" : {
+        "title" : "Anmelden",
+        "username" : "Benutzername",
+        "password" : "Passwort",
+        "signinBtn" : "Eintragen",
+        "forgot" : "Passwort vergessen? ",
+        "loginWith" : "oder Anmeldung mit",
+        "dontaccount" : "Sie haben noch kein Konto? ",
+        "signupBtn" : "sich einschreiben",
+        "wrongUsername" : "Falscher Benutzername!",
+        "wrongpass" : "Falsches Passwort!"
+        
     },
-    "clicked": {
-        "zero": "You clicked {} times!",
-        "one": "You clicked {} time!",
-        "two": "You clicked {} times!",
-        "few": "You clicked {} times!",
-        "many": "You clicked {} times!",
-        "other": "You clicked {} times!"
+
+    
+    "signupPage" : {
+        "title" : "sich einschreiben",
+        "email" : "E-mail",
+        "username" : "Benutzername",
+        "password" : "Passwort",
+        "RPassword" : "Passwort wiederholen",
+        "signinBtn" : "Anmelden",
+        "signupWith" : "oder registrieren Sie sich mit E-Mail",
+        "alreadyAccount" : "Sie haben bereits ein Konto?  ",
+        "signupBtn" : "sich einschreiben",
+        "weakPass" : "Das angegebene Passwort ist zu schwach!",
+        "existEmail" : "Das Konto für diese E-Mail existiert bereits"
     },
-    "amount": {
-        "zero": "Your amount : {} ",
-        "one": "Your amount : {} ",
-        "two": "Your amount : {} ",
-        "few": "Your amount : {} ",
-        "many": "Your amount : {} ",
-        "other": "Your amount : {} "
+
+    "menu" : {
+        "homepage" : "Startseite",
+        "profile" : "Profil",
+        "EpiPen" : "Finden Epi Pen",
+        "game" : "Spiel"
     },
-    "gender": {
-        "male": "Hi man ;) ",
-        "female": "Hello girl :)",
-        "with_arg": {
-            "male": "Hi man ;) {}",
-            "female": "Hello girl :) {}"
-        }
+
+    "profilePage" : {
+        "title" : "Profil",
+        "personal" : "Persönliche Daten",
+        "allergy" : "Informationen zu Allergien",
+        "setting" : "Einstellungen",
+        "logout" : "Abmelden"
     },
-    "reset_locale": "Reset Language"
+
+    "personalPage" : {
+        "title" : "Persönliche Daten",
+        "firsname" : "Vorname",
+        "lastname" : "Nachname",
+        "phoneNumber" : "Telefon Nummer",
+        "ePhoneNumber" : "Notfall-Telefonnummer",
+        "addNumber" : "Eine weitere Zahl hinzufügen",
+        "contactName" : "Kontaktnummer für Notfälle",
+        "gender" : "Geschlecht",
+        "birth" : "Geburtsdatum",
+        "age" : "Alter",
+        "address" : "Adresse",
+        "updateBtn" : "Aktualisierung"
+    },
+    "uploadPhotoPage" : {
+        "title" : "Profilfoto",
+        "source" : "Wählen Sie ein Foto aus Ihrer Bibliothek aus",
+        "or" : "oder",
+        "takePhoto" : "Foto machen",
+        "success" : "Erfolgreich hochgeladen!"
+    },
+
+    "informationPage" : {
+        "title" : "Informationen zu Allergien",
+        "type" : "Allergie-Typ",
+        "peanut" : "Erdnuss",
+        "soy" : "Soja",
+        "nuts" : "Nüsse",
+        "legumes" : "Hülsenfrüchte",
+        "fruit" : "Obst",
+        "fish" : "Fisch",
+        "wheat" : "Weizen",
+        "milk" : "Milch",
+        "eggs" : "Eier",
+        "sesame" : "Sesam",
+        "height" : "Höhe",
+        "weight" : "Gewicht",
+        "epiPen" : "Haben Sie einen Epi-Pen?",
+        "addAllergy": "Allergietyp hinzufügen"
+    },
+
+    "settingPage" : {
+        "title" : "Einstellungen",
+        "loginInfo" : "Informationen zur Anmeldung",
+        "language" : "Sprache",
+        "notification" : "Benachrichtigung",
+        "location" : "Standort",
+        "help" : "Hilfe"
+    },
+
+    "loginInfoPage" : {
+        "title" : "Informationen zur Anmeldung",
+        "username" : "Benutzername",
+        "email" : "E-mail",
+        "password" : "Passwort",
+        "rpassword" : "Passwort wiederholen",
+        "changePass" : "Passwort ändern",
+        "incorrectEmail" : "Bitte korrekte E-Mail eingeben!",
+        "currentPass" : "Jetziges Passwort"
+    },
+
+    "languagePage" : {
+        "title" : "Sprache ",
+        "english" : "Englisch",
+        "hebrew" : "Hebräisch",
+        "french" : "Französisch",
+        "german" : "Deutsch",
+        "chinese" : "Chinesisch",
+        "Japanese" : "Japanisch",
+        "Norway" : "Norwegen ",
+        "Italy" : "Italien ",
+        "selectedLang" : "Ausgewählte Sprache",
+        "selectLang" : "Sprache auswählen"
+
+    },
+
+    "locationPage" : {
+        "title" : "Standort",
+        "allowLocation" : "Zugriff auf Standort zulassen",
+        "myLocation" : "Ihr Standort"
+    },
+   
+    "notificationPage" : {
+        "title" : "Benachrichtigung",
+        "allowNotification" : "Push-Benachrichtigung"
+    },
+
+    "contactsPage" : {
+        "title" : "Kontaktliste",
+        "maxerror": "Sie können nicht mehr als {} Kontaktnummern hinzufügen",
+        "nonumber" : "Keine verfügbare Telefonnummer"
+    }
+
+   
 }

@@ -1,0 +1,158 @@
+{
+    "welcome": "ברוך הבא!",
+    "validEmail" :"בחר מרכיבים",
+    "lengthError" :"",
+    "formatError" :"",
+    "error" :"",
+    "confirmPassError" :"إضغط هنا!",
+    "success" : "{} إضغط هنا!",
+
+    "helpPage" : {
+        "title1" :"בחר מרכיבים",
+        "title2" :"עקוב אחר האלרגיה שלך",
+        "title3" :"היה בקשר",
+        "subTitle1" :"בחר מרכיביםבחר מרכיביםבחר מרכיביםבחר מרכיבים",
+        "subTitle2" :"בחר מרכיביםבחר מרכיביםבחר מרכיביםבחר מרכיבים",
+        "subTitle3" :"בחר מרכיביםבחר מרכיביםבחר מרכיביםבחר מרכיבים",
+        "continueBtn" :"המשך",
+        "skipBtn" : "דלג"
+    },
+
+    "loginPage" : {
+        "title" :"התחברות",
+        "username" :"שם משתמש",
+        "password" :"סיסמה",
+        "signinBtn" :"התחבר",
+        "forgot" :"שכחת את הסיסמא?",
+        "loginWith" :"או התחבר עם",
+        "dontaccount" :"אין לך חשבון? הירשם",
+        "signupBtn" :"הירשם",
+        "wrongUsername" :"שם המשתמש שגוי!",
+        "wrongpass" : "הסיסמה שגויה!"
+        
+    },
+
+    
+    "signupPage" : {
+        "title" :"הירשם",
+        "email" :"אימייל",
+        "username" :"שם משתמש",
+        "password" :"סיסמה",
+        "RPassword" :"חזור על הסיסמה",
+        "signinBtn" :"הירשם",
+        "signupWith" :"או להירשם באמצעות דואר אלקטרוני",
+        "alreadyAccount" :"כבר יש לך חשבון? התחברות",
+        "signupBtn" : "הירשם",
+        "weakPass" : "הסיסמה שסופקה חלשה מדי!",
+        "existEmail" : "החשבון כבר קיים עבור האימייל הזה!"
+    },
+
+    "menu" : {
+        "homepage" :"בית",
+        "profile" :"פּרוֹפִיל",
+        "EpiPen" :"אפיפן",
+        "game" : "מִשְׂחָק"
+    },
+
+    "profilePage" : {
+        "title" :"פּרוֹפִיל",
+        "personal" :"מידע אישי",
+        "allergy" :"מידע על האלרגיה",
+        "setting" :"הגדרות",
+        "logout" : "להתנתק"
+    },
+
+    "personalPage" : {
+        "title" :"מידע אישי",
+        "firsname" :"שם פרטי",
+        "lastname" :"שם משפחה",
+        "phoneNumber" :"מספר טלפון",
+        "ePhoneNumber" :"מספר טלפון לשעת חירום",
+        "addNumber" :"הוסף מספר נוסף",
+        "contactName" :"איש קשר  לשעת חירום",
+        "gender" :"מִין",
+        "birth" :"תאריך לידה",
+        "age" :"גיל",
+        "address" :"כתובת",
+        "updateBtn" : "עדכון"
+    },
+    "uploadPhotoPage" : {
+        "title" :"תמונת פרופיל",
+        "source" :"בחר תמונה מהספרייה שלך",
+        "or" :"אוֹ",
+        "takePhoto" :"לצלם",
+        "success" : "הועלה בהצלחה!"
+    },
+
+    "informationPage" : {
+        "title" :"מידע על אלרגיה",
+        "type" :"סוג אלרגיה",
+        "peanut" :"סויה",
+        "soy" :"אגוזי",
+        "nuts" :"בוטנים",
+        "legumes" :"פירות",
+        "fruit" :"קטניות",
+        "fish" :"דגים",
+        "wheat" :"חיטה",
+        "milk" :"חלב",
+        "eggs" :"ביצי",
+        "sesame" :"שׂוּמשׂוּם",
+        "height" :"גובה",
+        "weight" :"מִשׁקָל",
+        "epiPen" : "יש לך אפיפן?",
+        "addAllergy": "הוסף סוג אלרגיה"
+
+    },
+
+    "settingPage" : {
+        "title" :"הגדרות",
+        "loginInfo" :"פרטי התחברות",
+        "language" :"שפה",
+        "notification" :"הוֹדָעָה",
+        "location" :"מקום",
+        "help" : "עֶזרָה"
+    },
+
+    "loginInfoPage" : {
+        "title" :"פרטי התחברות",
+        "username" :"שם משתמש",
+        "email" :"אימייל",
+        "password" :"סיסמה",
+        "rpassword" :"חזור על הסיסמה",
+        "changePass" : "שנה סיסמא",
+        "incorrectEmail" : "נא להזין מייל נכון!",
+        "currentPass" : "סיסמה נוכחית"
+
+
+    },
+
+    "languagePage" : {
+        "title" :"שפה",
+        "english" :"אנגלית",
+        "hebrew" :"עִברִית",
+        "french" :"צָרְפָתִית",
+        "german" :"גֶרמָנִיָת",
+        "chinese" : "סינית",
+        "japanese" : "יפנית",
+        "norway" : "נורווגית",
+        "italy" : "איטלקית",
+        "selectedLang" :"שפה נבחרת",
+        "selectLang" : "בחר שפה"
+    },
+
+    "locationPage" : {
+        "title" : "מיקום",
+        "allowLocation" : "אפשר גישה למיקום",
+        "myLocation" : "המיקום שלך"
+    },
+       
+    "notificationPage" : {
+        "title" : "הוֹדָעָה",
+        "allowNotification" : "הודעת דחיפה"
+    },
+    "contactsPage" : {
+        "title" : "רשימת אנשי קשר",
+        "maxerror": "אינך יכול להוסיף מספר איש קשר יותר מ-{}",
+        "nonumber" : "אין מספר טלפון זמין"
+    }
+}
