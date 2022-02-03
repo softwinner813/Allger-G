@@ -49,7 +49,7 @@ class _PersonalPageState extends State<PersonalPage> {
   int nowAge = 0;
 
   String _gender = '';
-
+  bool isBirthChange = false;
   // Form Validation Global key
   final _formKey = GlobalKey<FormState>();
 
@@ -140,12 +140,14 @@ class _PersonalPageState extends State<PersonalPage> {
       firstDate: DateTime(1950),
       lastDate: DateTime(DateTime.now().year + 10),
     );
-    if (selected != null && selected != birthDate)
+    if (selected != null && selected != birthDate) {
       setState(() {
         birthDate = selected;
         birthday = "${birthDate.day}/${birthDate.month}/${birthDate.year}";
         nowAge = DateTime.now().year - birthDate.year;
+        isBirthChange = true;
       });
+    }
   }
 
   @override
@@ -172,7 +174,7 @@ class _PersonalPageState extends State<PersonalPage> {
     String phoneLengthError =
         LocaleKeys.lengthError.tr(args: ['PhoneNumber', '6', '20']);
     String addressLengthError =
-        LocaleKeys.lengthError.tr(args: ['address', '6', '20']);
+        LocaleKeys.lengthError.tr(args: ['address', '1', '20']);
     String formatError = LocaleKeys.formatError.tr();
 
     //-------------------------------------------------------
@@ -192,13 +194,20 @@ class _PersonalPageState extends State<PersonalPage> {
         (lastnameCtl.text != "") ? lastnameCtl.text : _userModel.lastname;
     phoneCtl.text =
         (phoneCtl.text != "") ? phoneCtl.text : _userModel.phoneNumber;
+    ephoneCtl.text =
+        (ephoneCtl.text != "") ? ephoneCtl.text : _userModel.ePhoneNubmer;
     addressCtl.text =
         (addressCtl.text != "") ? addressCtl.text : _userModel.address;
 
-    birthDate = (_userModel.birthday != 0)
-        ? DateTime.fromMillisecondsSinceEpoch(_userModel.birthday)
-        : birthDate;
-    nowAge = DateTime.now().year - birthDate.year;
+    if (!isBirthChange) {
+      birthDate = (_userModel.birthday != 0)
+          ? DateTime.fromMillisecondsSinceEpoch(_userModel.birthday)
+          : birthDate;
+      birthday = "${birthDate.day}/${birthDate.month}/${birthDate.year}";
+
+      nowAge = DateTime.now().year - birthDate.year;
+    }
+
     _gender = (_userModel.gender != "") ? _userModel.gender : "Male";
 
     _contactList = (_contactList.isEmpty) ? _userModel.contacts! : _contactList;
@@ -473,7 +482,7 @@ class _PersonalPageState extends State<PersonalPage> {
                               children: <Widget>[
                                 Expanded(
                                   child: Text(
-                                    "Contact Name",
+                                    eContact,
                                     style: PersonalPageStyles.inputText,
                                   ),
                                 ),
@@ -599,6 +608,7 @@ class _PersonalPageState extends State<PersonalPage> {
                         width: double.infinity,
                         height: 54,
                         decoration: BoxDecoration(
+                          color: PersonalPageColors.disableColor,
                           border: Border.all(
                             width: 1,
                             color: PersonalPageColors.iconColor,
@@ -609,7 +619,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              '$nowAge years',
+                              '${nowAge} years',
                               style: PersonalPageStyles.inputText,
                             ),
                             Icon(
@@ -640,7 +650,7 @@ class _PersonalPageState extends State<PersonalPage> {
                         maxLength: 50,
                         validator: (value) {
                           final reg = RegExp(r'^[a-zA-Z0-9 ]+$');
-                          if (value.length < 3 || value.length > 50) {
+                          if (value.length < 1 || value.length > 50) {
                             return addressLengthError;
                           } else if (!reg.hasMatch(value)) {
                             return formatError;

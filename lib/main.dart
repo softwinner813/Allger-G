@@ -15,6 +15,9 @@ void main() async {
         Locale('fr', 'FR'),
         Locale('de', 'DE'),
         Locale('zh', 'CN'),
+        Locale('ja', 'JP'),
+        Locale('no', 'NO'),
+        Locale('it', 'IT'),
         // Locale('ru', 'RU')
       ],
       path: 'lib/Assets/langs',

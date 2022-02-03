@@ -15,6 +15,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:email_validator/email_validator.dart';
@@ -125,6 +126,48 @@ class _LoginPageState extends State<LoginPage> {
             message: LocaleKeys.error,
           ),
         );
+    }
+  }
+
+  //  Facebook Login
+  Future<void> signInWithFacebook() async {
+    try {
+      // Trigger the sign-in flow
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+
+      // Create a credential from the access token
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+      // Once signed in, return the UserCredential
+      UserCredential _userCredential = await FirebaseAuth.instance
+          .signInWithCredential(facebookAuthCredential);
+      User? user = _userCredential.user;
+
+      // ========== Show Progress Dialog ===========
+      Dialogs.showLoadingDialog(context, _keyLoader, "Please wait..");
+      try {
+        await getUser(user!);
+      } catch (e) {
+        showTopSnackBar(
+          context,
+          CustomSnackBar.error(
+            message: e.toString(),
+          ),
+        );
+      }
+
+      //------------ Dismiss Porgress Dialog  -------------------
+      Navigator.of(_keyLoader.currentContext!, rootNavigator: true).pop();
+      await toDoResult(1);
+    } catch (e) {
+      print(e);
+      showTopSnackBar(
+        context,
+        CustomSnackBar.error(
+          message: e.toString(),
+        ),
+      );
     }
   }
 
@@ -413,8 +456,9 @@ class _LoginPageState extends State<LoginPage> {
                             Expanded(
                               child: loginItem(
                                 img: LoginPageStrings.fbIcon,
-                                onTap: () {
+                                onTap: () async {
                                   print("BB");
+                                  await signInWithFacebook();
                                 },
                               ),
                             ),

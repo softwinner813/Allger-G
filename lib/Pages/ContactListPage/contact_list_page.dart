@@ -60,6 +60,8 @@ class _ContactListPageState extends State<ContactListPage> {
       return permissionStatus;
     } else {
       await getContactList();
+      _selected = List.filled(_contactList.length, false);
+
       setState(() {
         _load = false;
       });
@@ -80,11 +82,16 @@ class _ContactListPageState extends State<ContactListPage> {
   }
 
   //  Get ContactList
-  Future<void> getContactList() async {
+  Future<void> getContactList({String query = ""}) async {
     // Get all contacts on device
+    // await ContactsService.openContactForm(androidLocalizedLabels: true);
+    if (query != null && query != "") {
+      _contactList = await ContactsService.getContacts(query: query);
+    } else {
+      _contactList = await ContactsService.getContacts();
+    }
 
-    _contactList = await ContactsService.getContacts();
-    _selected = List.filled(_contactList.length, false);
+    setState(() {});
     // // Get all contacts without thumbnail (faster)
     // List<Contact> contacts =
     //     await ContactsService.getContacts(withThumbnails: false);
@@ -131,7 +138,10 @@ class _ContactListPageState extends State<ContactListPage> {
             ? TextField(
                 autofocus: true,
                 controller: searchCtl,
-              )
+                onChanged: (value) async {
+                  print(value);
+                  await getContactList(query: value);
+                })
             : Text(
                 title,
                 style: ContactListPageStyles.title,
@@ -140,13 +150,14 @@ class _ContactListPageState extends State<ContactListPage> {
           _isSearch
               ? IconButton(
                   onPressed: () async {
-                    List<Contact> _conteact = await ContactsService.getContacts(
-                        query: searchCtl.text);
+                    // List<Contact> _conteact = await ContactsService.getContacts(
+                    //     query: searchCtl.text);
                     setState(() {
                       _isSearch = false;
+                      searchCtl.text = "";
                     });
                   },
-                  icon: Icon(Icons.check),
+                  icon: Icon(Icons.close),
                 )
               : IconButton(
                   onPressed: () {

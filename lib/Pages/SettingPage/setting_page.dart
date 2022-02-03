@@ -72,12 +72,18 @@ class _SettingPageState extends State<SettingPage> {
     String french = LocaleKeys.languagePage_french.tr();
     String german = LocaleKeys.languagePage_german.tr();
     String chinese = LocaleKeys.languagePage_chinese.tr();
+    String japanese = LocaleKeys.languagePage_Japanese.tr();
+    String norway = LocaleKeys.languagePage_Norway.tr();
+    String italy = LocaleKeys.languagePage_Italy.tr();
     Map langNames = {
       'US': english,
       "IL": hebrew,
       "FR": french,
       "DE": german,
       "CN": chinese,
+      "JP": japanese,
+      "NO": norway,
+      "IT": italy,
     };
     //-------------------------------------------------------------
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

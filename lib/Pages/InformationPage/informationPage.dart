@@ -277,6 +277,17 @@ class _InformationPageState extends State<InformationPage> {
     Navigator.pop(context, "restest");
   }
 
+  bool checkExist(List array, var item) {
+    bool res = false;
+    array.map((e) {
+      if (e.id == item.id) {
+        return res = true;
+      }
+    }).toList();
+
+    return res;
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -370,7 +381,7 @@ class _InformationPageState extends State<InformationPage> {
           width: 60 + normalAllergyTypes[index].name.length * 13,
           child: AllergyItem(
             onTap: (bool active, AllergyTypeModel value) {
-              if (!active && _Allergys.contains(value)) {
+              if (!active && checkExist(_Allergys, value)) {
                 _Allergys.remove(value);
               } else {
                 _Allergys.add(value);
@@ -378,7 +389,7 @@ class _InformationPageState extends State<InformationPage> {
               setState(() {});
             },
             allergy: normalAllergyTypes[index],
-            active: normalAllergyTypes[index].id < _Allergys.length,
+            active: checkExist(_Allergys, normalAllergyTypes[index]),
           ),
         ),
       );

@@ -81,12 +81,18 @@ class _LanguagePageState extends State<LanguagePage> {
     String french = LocaleKeys.languagePage_french.tr();
     String german = LocaleKeys.languagePage_german.tr();
     String chinese = LocaleKeys.languagePage_chinese.tr();
+    String japanese = LocaleKeys.languagePage_Japanese.tr();
+    String norway = LocaleKeys.languagePage_Norway.tr();
+    String italian = LocaleKeys.languagePage_Italy.tr();
     Map langNames = {
       'US': english,
       "IL": hebrew,
       "FR": french,
       "DE": german,
       "CN": chinese,
+      "JP": japanese,
+      "NO": norway,
+      "IT": italian,
     };
 
     List<LangItem> langList = [
@@ -100,6 +106,12 @@ class _LanguagePageState extends State<LanguagePage> {
           AppStrings.flags['DE'].toString(), german, Locale('de', 'DE'), "DE"),
       LangItem(
           AppStrings.flags['CN'].toString(), chinese, Locale('zh', 'CN'), "CN"),
+      LangItem(AppStrings.flags['JP'].toString(), japanese, Locale('ja', 'JP'),
+          "JP"),
+      LangItem(
+          AppStrings.flags['NO'].toString(), norway, Locale('no', 'NO'), "NO"),
+      LangItem(
+          AppStrings.flags['IT'].toString(), italian, Locale('it', 'IT'), "IT"),
     ];
 
     Locale currentLocale = context.locale;

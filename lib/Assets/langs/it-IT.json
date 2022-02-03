@@ -1,0 +1,158 @@
+{
+    "welcome": "Benvenuto!",
+    "validEmail" : "Inserisci una email valida",
+    "lengthError" : "Assicurati che {} tra {} e {} caratteri",
+    "formatError" : "Deve contenere solo A-Za-z0-9",
+    "error" : "Si è verificato un errore. Riprova!",
+    "confirmPassError" :"La password non corrisponde!",
+    "success" : "{} Con successo!",
+    "helpPage" : {
+        "title1" : "Scegli gli ingredienti",
+        "title2" : "Monitora la tua allergia",
+        "title3" :"Restiamo in contatto",
+        "subTitle1" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subTitle2" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subTitle3" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "continueBtn" : "Continua",
+        "skipBtn" : "Salta"
+    },
+
+    "loginPage" : {
+        "title" : "Accedi",
+        "username" : "Username",
+        "password" : "Password",
+        "signinBtn" : "Registrati",
+        "forgot" : "Password dimenticata?",
+        "loginWith" : "o accedi con",
+        "dontaccount" : "Non hai un account? ",
+        "signupBtn" : "Iscriviti",
+        "wrongUsername" : "Username sbagliato!",
+        "wrongpass" : "Password errata!"
+        
+    },
+
+    
+    "signupPage" : {
+        "title" : "Iscriviti",
+        "email" : "E-mail",
+        "username" : "Username",
+        "password" : "Password",
+        "RPassword" : "Ripeti Password",
+        "signinBtn" : "Registrati",
+        "signupWith" : "o registrati con l'e-mail",
+        "alreadyAccount" : "Hai gia un account? ",
+        "signupBtn" : "Iscriviti",
+        "weakPass" : "La password fornita è troppo debole!",
+        "existEmail" : "L'account esiste già per quell'e-mail"
+    },
+
+    "menu" : {
+        "homepage" : "Pagina iniziale",
+        "profile" : "Profilo",
+        "EpiPen" : "Trovare Epi Pen",
+        "game" : "Gioco"
+    },
+
+    "profilePage" : {
+        "title" : "Profilo",
+        "personal" : "Dati personali",
+        "allergy" : "Indicazione sugli allergeni",
+        "setting" : "Impostazioni",
+        "logout" : "Esci"
+    },
+
+    "personalPage" : {
+        "title" : "Dati personali",
+        "firsname" : "Nome",
+        "lastname" : "Cognome",
+        "phoneNumber" : "Numero di telefono",
+        "ePhoneNumber" : "Numero di telefono d'emergenza",
+        "addNumber" : "Aggiungi un altro numero",
+        "contactName" : "Numero contatto d'emergenza",
+        "gender" : "Genere",
+        "birth" : "Data di nascita",
+        "age" : "Età",
+        "address" : "Indirizzo",
+        "updateBtn" : "Aggiorna"
+    },
+    "uploadPhotoPage" : {
+        "title" : "Profile Photo",
+        "source" : "Select photo from your library",
+        "or" : "or",
+        "takePhoto" : "Take Photo",
+        "success" : "Uploaded Successfully!"
+    },
+
+    "informationPage" : {
+        "title" : "Indicazione sugli allergeni",
+        "type" : "Tipo di allergia",
+        "peanut" : "Arachidi",
+        "soy" : "Soia",
+        "nuts" : "Noccioline",
+        "legumes" : "Legumi",
+        "fruit" : "Frutta",
+        "fish" : "Pesce",
+        "wheat" : "Grano",
+        "milk" : "Latte",
+        "eggs" : "Uova",
+        "sesame" : "Sesamo",
+        "height" : "Altezza",
+        "weight" : "Peso",
+        "epiPen" : "Possiedi una EpiPen?",
+        "addAllergy": "Aggiungi tipo di allergia"
+    },
+
+    "settingPage" : {
+        "title" : "Impostazioni",
+        "loginInfo" : "Informazioni di accesso",
+        "language" : "Lingua",
+        "notification" : "Notifica",
+        "location" : "Posizione",
+        "help" : "Aiuto"
+    },
+
+    "loginInfoPage" : {
+        "title" : "Informazioni di accesso",
+        "username" : "Username",
+        "email" : "E-mail",
+        "password" : "Password",
+        "rpassword" : "Ripeti password",
+        "changePass" : "Cambia password",
+        "incorrectEmail" : "Si prega di inserire l'e-mail corretta!",
+        "currentPass" : "password attuale"
+    },
+
+    "languagePage" : {
+        "title" : "Lingua ",
+        "english" : "Inglese",
+        "hebrew" : "Ebraico",
+        "french" : "Francese",
+        "german" : "Tedesco",
+        "chinese" : "Cinese",
+        "Japanese" : "Giapponese",
+        "Norway" : "Norvegia",
+        "Italy" : "Italia",
+        "selectedLang" : "Lingua selezionata",
+        "selectLang" : "Seleziona la lingua"
+
+    },
+
+    "locationPage" : {
+        "title" : "Posizione",
+        "allowLocation" : "Permetti accesso alla posizione",
+        "myLocation" : "La tua posizione"
+    },
+   
+    "notificationPage" : {
+        "title" : "Notifica",
+        "allowNotification" : "Notifica push"
+    },
+
+    "contactsPage" : {
+        "title" : "Lista dei contatti",
+        "maxerror": "Non puoi aggiungere un numero di contatto superiore a {}",
+        "nonumber" : "Nessun numero di telefono disponibile"
+    }
+
+   
+}

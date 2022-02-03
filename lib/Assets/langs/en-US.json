@@ -5,7 +5,7 @@
     "formatError" : "It must contains only A-Za-z0-9",
     "error" : "Some error occured. Please retry!",
     "confirmPassError" :"Password doesn't match!",
-    "success" : "{} Succesfully!",
+    "success" : "{} Successfully!",
     "helpPage" : {
         "title1" : "Choose Ingridients",
         "title2" : "Track Your Allergy",
@@ -68,7 +68,7 @@
         "phoneNumber" : "Phone Number",
         "ePhoneNumber" : "Emergency Phone Number",
         "addNumber" : "Add another number",
-        "contactName" : "Contact Name",
+        "contactName" : "Emergency contact",
         "gender" : "Gender*",
         "birth" : "Date of Birth",
         "age" : "Age",
@@ -119,7 +119,7 @@
         "rpassword" : "Repeat Password",
         "changePass" : "Change Password",
         "incorrectEmail" : "Please enter correct email!",
-        "currentPass" : "Current Paasword"
+        "currentPass" : "Current Password"
     },
 
     "languagePage" : {

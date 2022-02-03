@@ -162,7 +162,7 @@ static const Map<String,dynamic> en_US = {
   "formatError": "It must contains only A-Za-z0-9",
   "error": "Some error occured. Please retry!",
   "confirmPassError": "Password doesn't match!",
-  "success": "{} Succesfully!",
+  "success": "{} Successfully!",
   "helpPage": {
     "title1": "Choose Ingridients",
     "title2": "Track Your Allergy",
@@ -218,7 +218,7 @@ static const Map<String,dynamic> en_US = {
     "phoneNumber": "Phone Number",
     "ePhoneNumber": "Emergency Phone Number",
     "addNumber": "Add another number",
-    "contactName": "Contact Name",
+    "contactName": "Emergency contact",
     "gender": "Gender*",
     "birth": "Date of Birth",
     "age": "Age",
@@ -266,7 +266,7 @@ static const Map<String,dynamic> en_US = {
     "rpassword": "Repeat Password",
     "changePass": "Change Password",
     "incorrectEmail": "Please enter correct email!",
-    "currentPass": "Current Paasword"
+    "currentPass": "Current Password"
   },
   "languagePage": {
     "title": "Language ",
@@ -526,7 +526,7 @@ static const Map<String,dynamic> he_IL = {
     "fish": "דגים",
     "wheat": "חיטה",
     "milk": "חלב",
-    "eggs": "ביצי",
+    "eggs": "ביצים",
     "sesame": "שׂוּמשׂוּם",
     "height": "גובה",
     "weight": "מִשׁקָל",
@@ -577,6 +577,429 @@ static const Map<String,dynamic> he_IL = {
     "title": "רשימת אנשי קשר",
     "maxerror": "אינך יכול להוסיף מספר איש קשר יותר מ-{}",
     "nonumber": "אין מספר טלפון זמין"
+  }
+};
+static const Map<String,dynamic> it_IT = {
+  "welcome": "Benvenuto!",
+  "validEmail": "Inserisci una email valida",
+  "lengthError": "Assicurati che {} tra {} e {} caratteri",
+  "formatError": "Deve contenere solo A-Za-z0-9",
+  "error": "Si è verificato un errore. Riprova!",
+  "confirmPassError": "La password non corrisponde!",
+  "success": "{} Con successo!",
+  "helpPage": {
+    "title1": "Scegli gli ingredienti",
+    "title2": "Monitora la tua allergia",
+    "title3": "Restiamo in contatto",
+    "subTitle1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "subTitle2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "subTitle3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "continueBtn": "Continua",
+    "skipBtn": "Salta"
+  },
+  "loginPage": {
+    "title": "Accedi",
+    "username": "Username",
+    "password": "Password",
+    "signinBtn": "Registrati",
+    "forgot": "Password dimenticata?",
+    "loginWith": "o accedi con",
+    "dontaccount": "Non hai un account? ",
+    "signupBtn": "Iscriviti",
+    "wrongUsername": "Username sbagliato!",
+    "wrongpass": "Password errata!"
+  },
+  "signupPage": {
+    "title": "Iscriviti",
+    "email": "E-mail",
+    "username": "Username",
+    "password": "Password",
+    "RPassword": "Ripeti Password",
+    "signinBtn": "Registrati",
+    "signupWith": "o registrati con l'e-mail",
+    "alreadyAccount": "Hai gia un account? ",
+    "signupBtn": "Iscriviti",
+    "weakPass": "La password fornita è troppo debole!",
+    "existEmail": "L'account esiste già per quell'e-mail"
+  },
+  "menu": {
+    "homepage": "Pagina iniziale",
+    "profile": "Profilo",
+    "EpiPen": "Trovare Epi Pen",
+    "game": "Gioco"
+  },
+  "profilePage": {
+    "title": "Profilo",
+    "personal": "Dati personali",
+    "allergy": "Indicazione sugli allergeni",
+    "setting": "Impostazioni",
+    "logout": "Esci"
+  },
+  "personalPage": {
+    "title": "Dati personali",
+    "firsname": "Nome",
+    "lastname": "Cognome",
+    "phoneNumber": "Numero di telefono",
+    "ePhoneNumber": "Numero di telefono d'emergenza",
+    "addNumber": "Aggiungi un altro numero",
+    "contactName": "Numero contatto d'emergenza",
+    "gender": "Genere",
+    "birth": "Data di nascita",
+    "age": "Età",
+    "address": "Indirizzo",
+    "updateBtn": "Aggiorna"
+  },
+  "uploadPhotoPage": {
+    "title": "Profile Photo",
+    "source": "Select photo from your library",
+    "or": "or",
+    "takePhoto": "Take Photo",
+    "success": "Uploaded Successfully!"
+  },
+  "informationPage": {
+    "title": "Indicazione sugli allergeni",
+    "type": "Tipo di allergia",
+    "peanut": "Arachidi",
+    "soy": "Soia",
+    "nuts": "Noccioline",
+    "legumes": "Legumi",
+    "fruit": "Frutta",
+    "fish": "Pesce",
+    "wheat": "Grano",
+    "milk": "Latte",
+    "eggs": "Uova",
+    "sesame": "Sesamo",
+    "height": "Altezza",
+    "weight": "Peso",
+    "epiPen": "Possiedi una EpiPen?",
+    "addAllergy": "Aggiungi tipo di allergia"
+  },
+  "settingPage": {
+    "title": "Impostazioni",
+    "loginInfo": "Informazioni di accesso",
+    "language": "Lingua",
+    "notification": "Notifica",
+    "location": "Posizione",
+    "help": "Aiuto"
+  },
+  "loginInfoPage": {
+    "title": "Informazioni di accesso",
+    "username": "Username",
+    "email": "E-mail",
+    "password": "Password",
+    "rpassword": "Ripeti password",
+    "changePass": "Cambia password",
+    "incorrectEmail": "Si prega di inserire l'e-mail corretta!",
+    "currentPass": "password attuale"
+  },
+  "languagePage": {
+    "title": "Lingua ",
+    "english": "Inglese",
+    "hebrew": "Ebraico",
+    "french": "Francese",
+    "german": "Tedesco",
+    "chinese": "Cinese",
+    "Japanese": "Giapponese",
+    "Norway": "Norvegia",
+    "Italy": "Italia",
+    "selectedLang": "Lingua selezionata",
+    "selectLang": "Seleziona la lingua"
+  },
+  "locationPage": {
+    "title": "Posizione",
+    "allowLocation": "Permetti accesso alla posizione",
+    "myLocation": "La tua posizione"
+  },
+  "notificationPage": {
+    "title": "Notifica",
+    "allowNotification": "Notifica push"
+  },
+  "contactsPage": {
+    "title": "Lista dei contatti",
+    "maxerror": "Non puoi aggiungere un numero di contatto superiore a {}",
+    "nonumber": "Nessun numero di telefono disponibile"
+  }
+};
+static const Map<String,dynamic> ja_JP = {
+  "welcome": "ようこそ！",
+  "validEmail": "正しいメールアドレスを入力してください",
+  "lengthError": "{}文字と{}文字の間に{}があることを確認してください",
+  "formatError": "A-Za-z0-9のみが含まれている必要があります",
+  "error": "エラーが発生しました。 再試行してください！",
+  "confirmPassError": "パスワードが一致しません！",
+  "success": "{}成功しました！",
+  "helpPage": {
+    "title1": "材料を選んでください",
+    "title2": "アレルギーを記録する",
+    "title3": "連絡する",
+    "subTitle1": "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+    "subTitle2": "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+    "subTitle3": "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+    "continueBtn": "続ける",
+    "skipBtn": "スキップする"
+  },
+  "loginPage": {
+    "title": "ログイン",
+    "username": "ユーザーネーム",
+    "password": "パスワード",
+    "signinBtn": "サインイン",
+    "forgot": "パスワードをお忘れですか？",
+    "loginWith": "又は〜でログインする",
+    "dontaccount": "アカウントをお持ちではありませんか？ ",
+    "signupBtn": "サインアップ",
+    "wrongUsername": "間違ったユーザー名！",
+    "wrongpass": "間違ったパスワード！"
+  },
+  "signupPage": {
+    "title": "サインアップ",
+    "email": "メールアドレス",
+    "username": "ユーザーネーム",
+    "password": "パスワード",
+    "RPassword": "パスワードを再度入力",
+    "signinBtn": "サインイン",
+    "signupWith": "又はメールアドレスで登録する",
+    "alreadyAccount": "既にアカウントをお持ちですか? ",
+    "signupBtn": "サインアップ",
+    "weakPass": "提供されたパスワードが弱すぎます！",
+    "existEmail": "そのメールのアカウントはすでに存在します"
+  },
+  "menu": {
+    "homepage": "ホームページ",
+    "profile": "プロフィール",
+    "EpiPen": "探す Epi Pen",
+    "game": "ゲーム"
+  },
+  "profilePage": {
+    "title": "プロフィール",
+    "personal": "個人情報",
+    "allergy": "アレルギーに関する情報",
+    "setting": "設定",
+    "logout": "ログアウト"
+  },
+  "personalPage": {
+    "title": "個人情報",
+    "firsname": "名前",
+    "lastname": "苗字",
+    "phoneNumber": "電話番号",
+    "ePhoneNumber": "緊急連絡先電話番号",
+    "addNumber": "電話番号を追加する",
+    "contactName": "緊急連絡先",
+    "gender": "性別*",
+    "birth": "生年月日",
+    "age": "年齢",
+    "address": "住所",
+    "updateBtn": "アップデート"
+  },
+  "uploadPhotoPage": {
+    "title": "プロフィール写真",
+    "source": "ライブラリから写真を選択します",
+    "or": "また",
+    "takePhoto": "写真を撮る",
+    "success": "正常にアップロードされました！"
+  },
+  "informationPage": {
+    "title": "アレルギーに関する情報",
+    "type": "アレルギータイプ",
+    "peanut": "ピーナッツ",
+    "soy": "大豆",
+    "nuts": "ナッツ",
+    "legumes": "マメ科植物",
+    "fruit": "フルーツ",
+    "fish": "魚",
+    "wheat": "小麦",
+    "milk": "ミルク",
+    "eggs": "卵",
+    "sesame": "ごま",
+    "height": "身長",
+    "weight": "体重",
+    "epiPen": "あなたはエピペンをお持ちですか？",
+    "addAllergy": "アレルギータイプを追加します"
+  },
+  "settingPage": {
+    "title": "設定",
+    "loginInfo": "ログイン情報",
+    "language": "言語",
+    "notification": "通知",
+    "location": "位置情報",
+    "help": "ヘルプ"
+  },
+  "loginInfoPage": {
+    "title": "ログイン情報",
+    "username": "ユーザーネーム",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "rpassword": "パスワードを繰り返す",
+    "changePass": "パスワードを変更する",
+    "incorrectEmail": "正しいメールアドレスを入力してください！",
+    "currentPass": "現在のパスワード"
+  },
+  "languagePage": {
+    "title": "言語 ",
+    "english": "英語",
+    "hebrew": "ヘブライ語",
+    "french": "フランス語",
+    "german": "ドイツ語",
+    "chinese": "中国語",
+    "Japanese": "日本語",
+    "Norway": "ノルウェー語",
+    "Italy": "イタリア語",
+    "selectedLang": "選択した言語",
+    "selectLang": "言語を選択する"
+  },
+  "locationPage": {
+    "title": "位置情報",
+    "allowLocation": "位置情報を許可する",
+    "myLocation": "あなたの位置情報"
+  },
+  "notificationPage": {
+    "title": "通知",
+    "allowNotification": "プッシュ通知"
+  },
+  "contactsPage": {
+    "title": "連絡先リスト",
+    "maxerror": "{}を超える連絡先番号を追加することはできません",
+    "nonumber": "利用可能な電話番号がありません"
+  }
+};
+static const Map<String,dynamic> no_NO = {
+  "welcome": "Velkommen!",
+  "validEmail": "Vennligst skriv inn en gyldig e-postadresse",
+  "lengthError": "Sørg for at {} mellom {} og {} tegn",
+  "formatError": "Den må bare inneholde A-Za-z0-9",
+  "error": "Det oppstod en feil. Vennligst prøv på nytt!",
+  "confirmPassError": "Passord stemmer ikke!",
+  "success": "{} Vellykket!",
+  "helpPage": {
+    "title1": "Velg ingredienser",
+    "title2": "Spor allergien din",
+    "title3": "Ta kontakt",
+    "subTitle1": "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+    "subTitle2": "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+    "subTitle3": "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+    "continueBtn": "Fortsette",
+    "skipBtn": "Hopp over"
+  },
+  "loginPage": {
+    "title": "Logg Inn",
+    "username": "Brukernavn",
+    "password": "Passord",
+    "signinBtn": "Logg inn",
+    "forgot": "Glemt passord?",
+    "loginWith": "eller logg inn med",
+    "dontaccount": "Har du ikke en konto?  ",
+    "signupBtn": "Melde deg på",
+    "wrongUsername": "Feil brukernavn!",
+    "wrongpass": "Feil passord!"
+  },
+  "signupPage": {
+    "title": "Melde deg på",
+    "email": "E-post",
+    "username": "Brukernavn",
+    "password": "Passord",
+    "RPassword": "Gjenta passord",
+    "signinBtn": "Logg Inn",
+    "signupWith": "eller meld deg på med e-post",
+    "alreadyAccount": "Har du allerede en konto?  ",
+    "signupBtn": "Melde deg på",
+    "weakPass": "Passordet som er oppgitt er for svakt!",
+    "existEmail": "Kontoen eksisterer allerede for den e-posten"
+  },
+  "menu": {
+    "homepage": "Hjemmeside",
+    "profile": "Profil",
+    "EpiPen": "Finne Epi Pen",
+    "game": "Spill"
+  },
+  "profilePage": {
+    "title": "Profil",
+    "personal": "Personlig informasjon",
+    "allergy": "Allergiinformasjon",
+    "setting": "Innstillinger",
+    "logout": "Logg ut"
+  },
+  "personalPage": {
+    "title": "Personlig informasjon",
+    "firsname": "Fornavn",
+    "lastname": "Etternavn",
+    "phoneNumber": "Telefonnummer",
+    "ePhoneNumber": "Nødtelefonnummer",
+    "addNumber": "Legg til et annet nummer",
+    "contactName": "Nødkontaktnummer",
+    "gender": "Kjønn*",
+    "birth": "Fødselsdato",
+    "age": "Alder",
+    "address": "Adresse",
+    "updateBtn": "Oppdater"
+  },
+  "uploadPhotoPage": {
+    "title": "Profilbilde",
+    "source": "Velg bilde fra biblioteket ditt",
+    "or": "eller",
+    "takePhoto": "Ta bilde",
+    "success": "Opplastet vellykket!"
+  },
+  "informationPage": {
+    "title": "Allergiinformasjon",
+    "type": "Allergitype",
+    "peanut": "Peanøtt",
+    "soy": "soya",
+    "nuts": "nøtter",
+    "legumes": "Belgfrukter",
+    "fruit": "Frukt",
+    "fish": "Fisk",
+    "wheat": "Hvete",
+    "milk": "melk",
+    "eggs": "egg",
+    "sesame": "Sesam",
+    "height": "Høyde",
+    "weight": "Vekt",
+    "epiPen": "Har du en Epi Pen?",
+    "addAllergy": "Legg til allergitype"
+  },
+  "settingPage": {
+    "title": "Innstillinger",
+    "loginInfo": "login informasjon",
+    "language": "Språk",
+    "notification": "Melding",
+    "location": "plassering",
+    "help": "Hjelp"
+  },
+  "loginInfoPage": {
+    "title": "login informasjon",
+    "username": "Brukernavn",
+    "email": "E-post",
+    "password": "Passord",
+    "rpassword": "Gjenta passord",
+    "changePass": "Bytt passord",
+    "incorrectEmail": "Vennligst skriv inn riktig e-post!",
+    "currentPass": "Nåværende passord"
+  },
+  "languagePage": {
+    "title": "Språk ",
+    "english": "Engelsk",
+    "hebrew": "Hebraisk",
+    "french": "fransk",
+    "german": "tysk",
+    "chinese": "kinesisk",
+    "Japanese": "japansk",
+    "Norway": "Norge",
+    "Italy": "Italia",
+    "selectedLang": "Valgt språk",
+    "selectLang": "Velg språk"
+  },
+  "locationPage": {
+    "title": "plassering",
+    "allowLocation": "Tillat tilgang til plassering",
+    "myLocation": "Posisjonen din"
+  },
+  "notificationPage": {
+    "title": "Melding",
+    "allowNotification": "Push-varsling"
+  },
+  "contactsPage": {
+    "title": "Kontaktliste",
+    "maxerror": "Du kan ikke legge til kontaktnummer mer enn {}",
+    "nonumber": "Ingen tilgjengelig telefonnummer"
   }
 };
 static const Map<String,dynamic> zh_CN = {
@@ -720,5 +1143,5 @@ static const Map<String,dynamic> zh_CN = {
     "nonumber": "沒有可用的電話號碼"
   }
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"de_DE": de_DE, "en_US": en_US, "fr_FR": fr_FR, "he_IL": he_IL, "zh_CN": zh_CN};
+static const Map<String, Map<String,dynamic>> mapLocales = {"de_DE": de_DE, "en_US": en_US, "fr_FR": fr_FR, "he_IL": he_IL, "it_IT": it_IT, "ja_JP": ja_JP, "no_NO": no_NO, "zh_CN": zh_CN};
 }

@@ -1,0 +1,158 @@
+{
+    "welcome": "Velkommen!",
+    "validEmail" : "Vennligst skriv inn en gyldig e-postadresse",
+    "lengthError" : "Sørg for at {} mellom {} og {} tegn",
+    "formatError" : "Den må bare inneholde A-Za-z0-9",
+    "error" : "Det oppstod en feil. Vennligst prøv på nytt!",
+    "confirmPassError" :"Passord stemmer ikke!",
+    "success" : "{} Vellykket!",
+    "helpPage" : {
+        "title1" : "Velg ingredienser",
+        "title2" : "Spor allergien din",
+        "title3" :"Ta kontakt",
+        "subTitle1" : "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+        "subTitle2" : "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+        "subTitle3" : "Ta kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontaktTa kontakt",
+        "continueBtn" : "Fortsette",
+        "skipBtn" : "Hopp over"
+    },
+
+    "loginPage" : {
+        "title" : "Logg Inn",
+        "username" : "Brukernavn",
+        "password" : "Passord",
+        "signinBtn" : "Logg inn",
+        "forgot" : "Glemt passord?",
+        "loginWith" : "eller logg inn med",
+        "dontaccount" : "Har du ikke en konto?  ",
+        "signupBtn" : "Melde deg på",
+        "wrongUsername" : "Feil brukernavn!",
+        "wrongpass" : "Feil passord!"
+        
+    },
+
+    
+    "signupPage" : {
+        "title" : "Melde deg på",
+        "email" : "E-post",
+        "username" : "Brukernavn",
+        "password" : "Passord",
+        "RPassword" : "Gjenta passord",
+        "signinBtn" : "Logg Inn",
+        "signupWith" : "eller meld deg på med e-post",
+        "alreadyAccount" : "Har du allerede en konto?  ",
+        "signupBtn" : "Melde deg på",
+        "weakPass" : "Passordet som er oppgitt er for svakt!",
+        "existEmail" : "Kontoen eksisterer allerede for den e-posten"
+    },
+
+    "menu" : {
+        "homepage" : "Hjemmeside",
+        "profile" : "Profil",
+        "EpiPen" : "Finne Epi Pen",
+        "game" : "Spill"
+    },
+
+    "profilePage" : {
+        "title" : "Profil",
+        "personal" : "Personlig informasjon",
+        "allergy" : "Allergiinformasjon",
+        "setting" : "Innstillinger",
+        "logout" : "Logg ut"
+    },
+
+    "personalPage" : {
+        "title" : "Personlig informasjon",
+        "firsname" : "Fornavn",
+        "lastname" : "Etternavn",
+        "phoneNumber" : "Telefonnummer",
+        "ePhoneNumber" : "Nødtelefonnummer",
+        "addNumber" : "Legg til et annet nummer",
+        "contactName" : "Nødkontaktnummer",
+        "gender" : "Kjønn*",
+        "birth" : "Fødselsdato",
+        "age" : "Alder",
+        "address" : "Adresse",
+        "updateBtn" : "Oppdater"
+    },
+    "uploadPhotoPage" : {
+        "title" : "Profilbilde",
+        "source" : "Velg bilde fra biblioteket ditt",
+        "or" : "eller",
+        "takePhoto" : "Ta bilde",
+        "success" : "Opplastet vellykket!"
+    },
+
+    "informationPage" : {
+        "title" : "Allergiinformasjon",
+        "type" : "Allergitype",
+        "peanut" : "Peanøtt",
+        "soy" : "soya",
+        "nuts" : "nøtter",
+        "legumes" : "Belgfrukter",
+        "fruit" : "Frukt",
+        "fish" : "Fisk",
+        "wheat" : "Hvete",
+        "milk" : "melk",
+        "eggs" : "egg",
+        "sesame" : "Sesam",
+        "height" : "Høyde",
+        "weight" : "Vekt",
+        "epiPen" : "Har du en Epi Pen?",
+        "addAllergy": "Legg til allergitype"
+    },
+
+    "settingPage" : {
+        "title" : "Innstillinger",
+        "loginInfo" : "login informasjon",
+        "language" : "Språk",
+        "notification" : "Melding",
+        "location" : "plassering",
+        "help" : "Hjelp"
+    },
+
+    "loginInfoPage" : {
+        "title" : "login informasjon",
+        "username" : "Brukernavn",
+        "email" : "E-post",
+        "password" : "Passord",
+        "rpassword" : "Gjenta passord",
+        "changePass" : "Bytt passord",
+        "incorrectEmail" : "Vennligst skriv inn riktig e-post!",
+        "currentPass" : "Nåværende passord"
+    },
+
+    "languagePage" : {
+        "title" : "Språk ",
+        "english" : "Engelsk",
+        "hebrew" : "Hebraisk",
+        "french" : "fransk",
+        "german" : "tysk",
+        "chinese" : "kinesisk",
+        "Japanese" : "japansk",
+        "Norway" : "Norge",
+        "Italy" : "Italia",
+        "selectedLang" : "Valgt språk",
+        "selectLang" : "Velg språk"
+
+    },
+
+    "locationPage" : {
+        "title" : "plassering",
+        "allowLocation" : "Tillat tilgang til plassering",
+        "myLocation" : "Posisjonen din"
+    },
+   
+    "notificationPage" : {
+        "title" : "Melding",
+        "allowNotification" : "Push-varsling"
+    },
+
+    "contactsPage" : {
+        "title" : "Kontaktliste",
+        "maxerror": "Du kan ikke legge til kontaktnummer mer enn {}",
+        "nonumber" : "Ingen tilgjengelig telefonnummer"
+    }
+
+   
+}

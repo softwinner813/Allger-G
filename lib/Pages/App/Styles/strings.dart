@@ -17,6 +17,9 @@ class AppStrings {
     "FR": "lib/Assets/Images/flags/FR.png",
     "DE": "lib/Assets/Images/flags/DE.png",
     "IL": "lib/Assets/Images/flags/IL.png",
-    "CN": "lib/Assets/Images/flags/CNs.png",
+    "CN": "lib/Assets/Images/flags/CN.png",
+    "JP": "lib/Assets/Images/flags/JP.png",
+    "NO": "lib/Assets/Images/flags/NO.png",
+    "IT": "lib/Assets/Images/flags/IT.png",
   };
 }

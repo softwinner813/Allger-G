@@ -1,0 +1,158 @@
+{
+    "welcome": "ようこそ！",
+    "validEmail" : "正しいメールアドレスを入力してください",
+    "lengthError" : "{}文字と{}文字の間に{}があることを確認してください",
+    "formatError" : "A-Za-z0-9のみが含まれている必要があります",
+    "error" : "エラーが発生しました。 再試行してください！",
+    "confirmPassError" :"パスワードが一致しません！",
+    "success" : "{}成功しました！",
+    "helpPage" : {
+        "title1" : "材料を選んでください",
+        "title2" : "アレルギーを記録する",
+        "title3" :"連絡する",
+        "subTitle1" : "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+        "subTitle2" : "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+        "subTitle3" : "連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する連絡する",
+        "continueBtn" : "続ける",
+        "skipBtn" : "スキップする"
+    },
+
+    "loginPage" : {
+        "title" : "ログイン",
+        "username" : "ユーザーネーム",
+        "password" : "パスワード",
+        "signinBtn" : "サインイン",
+        "forgot" : "パスワードをお忘れですか？",
+        "loginWith" : "又は〜でログインする",
+        "dontaccount" : "アカウントをお持ちではありませんか？ ",
+        "signupBtn" : "サインアップ",
+        "wrongUsername" : "間違ったユーザー名！",
+        "wrongpass" : "間違ったパスワード！"
+        
+    },
+
+    
+    "signupPage" : {
+        "title" : "サインアップ",
+        "email" : "メールアドレス",
+        "username" : "ユーザーネーム",
+        "password" : "パスワード",
+        "RPassword" : "パスワードを再度入力",
+        "signinBtn" : "サインイン",
+        "signupWith" : "又はメールアドレスで登録する",
+        "alreadyAccount" : "既にアカウントをお持ちですか? ",
+        "signupBtn" : "サインアップ",
+        "weakPass" : "提供されたパスワードが弱すぎます！",
+        "existEmail" : "そのメールのアカウントはすでに存在します"
+    },
+
+    "menu" : {
+        "homepage" : "ホームページ",
+        "profile" : "プロフィール",
+        "EpiPen" : "探す Epi Pen",
+        "game" : "ゲーム"
+    },
+
+    "profilePage" : {
+        "title" : "プロフィール",
+        "personal" : "個人情報",
+        "allergy" : "アレルギーに関する情報",
+        "setting" : "設定",
+        "logout" : "ログアウト"
+    },
+
+    "personalPage" : {
+        "title" : "個人情報",
+        "firsname" : "名前",
+        "lastname" : "苗字",
+        "phoneNumber" : "電話番号",
+        "ePhoneNumber" : "緊急連絡先電話番号",
+        "addNumber" : "電話番号を追加する",
+        "contactName" : "緊急連絡先",
+        "gender" : "性別*",
+        "birth" : "生年月日",
+        "age" : "年齢",
+        "address" : "住所",
+        "updateBtn" : "アップデート"
+    },
+    "uploadPhotoPage" : {
+        "title" : "プロフィール写真",
+        "source" : "ライブラリから写真を選択します",
+        "or" : "また",
+        "takePhoto" : "写真を撮る",
+        "success" : "正常にアップロードされました！"
+    },
+
+    "informationPage" : {
+        "title" : "アレルギーに関する情報",
+        "type" : "アレルギータイプ",
+        "peanut" : "ピーナッツ",
+        "soy" : "大豆",
+        "nuts" : "ナッツ",
+        "legumes" : "マメ科植物",
+        "fruit" : "フルーツ",
+        "fish" : "魚",
+        "wheat" : "小麦",
+        "milk" : "ミルク",
+        "eggs" : "卵",
+        "sesame" : "ごま",
+        "height" : "身長",
+        "weight" : "体重",
+        "epiPen" : "あなたはエピペンをお持ちですか？",
+        "addAllergy": "アレルギータイプを追加します"
+    },
+
+    "settingPage" : {
+        "title" : "設定",
+        "loginInfo" : "ログイン情報",
+        "language" : "言語",
+        "notification" : "通知",
+        "location" : "位置情報",
+        "help" : "ヘルプ"
+    },
+
+    "loginInfoPage" : {
+        "title" : "ログイン情報",
+        "username" : "ユーザーネーム",
+        "email" : "メールアドレス",
+        "password" : "パスワード",
+        "rpassword" : "パスワードを繰り返す",
+        "changePass" : "パスワードを変更する",
+        "incorrectEmail" : "正しいメールアドレスを入力してください！",
+        "currentPass" : "現在のパスワード"
+    },
+
+    "languagePage" : {
+        "title" : "言語 ",
+        "english" : "英語",
+        "hebrew" : "ヘブライ語",
+        "french" : "フランス語",
+        "german" : "ドイツ語",
+        "chinese" : "中国語",
+        "Japanese" : "日本語",
+        "Norway" : "ノルウェー語",
+        "Italy" : "イタリア語",
+        "selectedLang" : "選択した言語",
+        "selectLang" : "言語を選択する"
+
+    },
+
+    "locationPage" : {
+        "title" : "位置情報",
+        "allowLocation" : "位置情報を許可する",
+        "myLocation" : "あなたの位置情報"
+    },
+   
+    "notificationPage" : {
+        "title" : "通知",
+        "allowNotification" : "プッシュ通知"
+    },
+
+    "contactsPage" : {
+        "title" : "連絡先リスト",
+        "maxerror": "{}を超える連絡先番号を追加することはできません",
+        "nonumber" : "利用可能な電話番号がありません"
+    }
+
+   
+}
